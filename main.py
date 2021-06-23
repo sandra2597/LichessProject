@@ -17,8 +17,9 @@ created_game_ids = []
 for game in games:
     response = create_challenge(game[0], game[1], clock_limit,
                                 clock_increment, path_to_token_data)
-    if response.status_code == 200:
-        created_game_ids.append(response.json()['game']['id'])
+    if response != 1:
+        if response.status_code == 200:
+            created_game_ids.append(response.json()['game']['id'])
 
 # writing game id data to two seperate files.
 # The file 'game_iframes.txt' contains all the iframes which can directly be pasted in the html of a webpage.

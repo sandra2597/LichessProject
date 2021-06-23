@@ -8,7 +8,7 @@ import requests
 def import_games(path_to_csv_file):
     games = []
     with open(path_to_csv_file, newline='') as csvfile:
-        reader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+        reader = csv.reader(csvfile)
         rownumber = 0
         for row in reader:
             rownumber += 1
